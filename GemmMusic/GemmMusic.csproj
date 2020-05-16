@@ -134,12 +134,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Audio\Brunos\ShapeOfYou.mp3" />
+    <Content Include="Assets\Audio\Demis\Cheap Thrills.mp3" />
     <Content Include="Assets\Icons\bruno.png" />
     <Content Include="Assets\Icons\demi.png" />
     <Content Include="Assets\Icons\drake.png" />
     <Content Include="Assets\Icons\selena.png" />
     <Content Include="Assets\Images\Brunos\ShapeOfYou.png" />
-    <Content Include="Assets\Images\Demis\Sorry.png" />
+    <Content Include="Assets\Images\Demis\Cheap Thrills.png" />
     <Content Include="Assets\Images\Drakes\Scorpion.png" />
     <Content Include="Assets\Images\Selenas\StarsDance.png" />
     <Content Include="Properties\Default.rd.xml" />

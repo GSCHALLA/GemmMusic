@@ -18,13 +18,35 @@ namespace GemmMusic.Model
 
         }
 
+        public static void GetSongsByCategory(ObservableCollection<Music> songs, MusicCategory category)
+        {
+            var allsongs = getSongs();
+            var filteredSounds = allsongs.Where(song => song.Category == category).ToList();
+            songs.Clear();
+            filteredSounds.ForEach(song => songs.Add(song));
+        }
+
         private static List<Music> getSongs()
         {
             var songs = new List<Music>();
             songs.Add(new Music("ShapeOfYou", MusicCategory.Brunos));
+            songs.Add(new Music("Cheap Thrills", MusicCategory.Demis));
 
             return songs;
 
+        }
+
+        /* Search button - Searching based on name and category - starts here */
+
+        public static void SearchByName(ObservableCollection<Music> songs, string queryText)
+        {
+            var allsongs = getSongs();
+            var SearchedSongsByName = 
+                allsongs.Where(song => song.Name.Contains(queryText)
+                || song.Category.ToString().Contains(queryText)).ToList();
+            songs.Clear();
+            SearchedSongsByName.ForEach(song => songs.Add(song));
+            
         }
     }
 }

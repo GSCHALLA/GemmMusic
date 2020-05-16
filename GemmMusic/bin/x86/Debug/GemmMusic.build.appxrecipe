@@ -37,6 +37,9 @@
     <AppxPackagedFile Include="C:\Users\saige\source\repos\GemmMusic\GemmMusic\Assets\Audio\Brunos\ShapeOfYou.mp3">
       <PackagePath>Assets\Audio\Brunos\ShapeOfYou.mp3</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\saige\source\repos\GemmMusic\GemmMusic\Assets\Audio\Demis\Cheap Thrills.mp3">
+      <PackagePath>Assets\Audio\Demis\Cheap Thrills.mp3</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\saige\source\repos\GemmMusic\GemmMusic\Assets\Icons\bruno.png">
       <PackagePath>Assets\Icons\bruno.png</PackagePath>
     </AppxPackagedFile>
@@ -52,8 +55,8 @@
     <AppxPackagedFile Include="C:\Users\saige\source\repos\GemmMusic\GemmMusic\Assets\Images\Brunos\ShapeOfYou.png">
       <PackagePath>Assets\Images\Brunos\ShapeOfYou.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\saige\source\repos\GemmMusic\GemmMusic\Assets\Images\Demis\Sorry.png">
-      <PackagePath>Assets\Images\Demis\Sorry.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\saige\source\repos\GemmMusic\GemmMusic\Assets\Images\Demis\Cheap Thrills.png">
+      <PackagePath>Assets\Images\Demis\Cheap Thrills.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\saige\source\repos\GemmMusic\GemmMusic\Assets\Images\Drakes\Scorpion.png">
       <PackagePath>Assets\Images\Drakes\Scorpion.png</PackagePath>

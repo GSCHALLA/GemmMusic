@@ -16,13 +16,13 @@
 
         <RelativePanel>
 
-            <Button x:ConnectionId='13' Name="HamBurgerButton"
+            <Button x:ConnectionId='14' Name="HamBurgerButton"
                     RelativePanel.AlignLeftWithPanel="True" Margin="0,10,0,0"
                     FontFamily="Segoe MDL2 Assets" 
                     Content="&#xE700;" Width="35"                              />
 
-            <Button x:ConnectionId='14' Name="BackButton"
-                    RelativePanel.RightOf="HamBurgerButton" Margin="0,10,0,0" 
+            <Button x:ConnectionId='15' Name="BackButton"
+                    RelativePanel.RightOf="HamBurgerButton" Margin="0,10,0,0"                          
                     FontFamily="Segoe MDL2 Assets"
                     Content="&#xE0A6;" Width="35"/>
 
@@ -45,27 +45,31 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-         </SplitView.Pane>
+            </SplitView.Pane>
             <SplitView.Content >
-                <Grid Margin="10,20,0,0"> 
+                <Grid  Margin="10,20,0,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <MediaElement x:ConnectionId='8' Name="MyMediaElement" AutoPlay="True"/>
-                    <TextBlock x:ConnectionId='9' Name="CategoryTextBlock" Text="GEMM MUSIC" FontSize="24" HorizontalAlignment="Center" />
-                    <GridView x:ConnectionId='10' Grid.Row="1" 
+                    <SearchBox x:ConnectionId='8' x:Name="mySearchBox"
+                               FocusOnKeyboardInput="True"
+                                                                           Width="400" Height="35"
+                               />
+                    <MediaElement x:ConnectionId='9' Name="MyMediaElement" AutoPlay="True"/>
+                    <TextBlock x:ConnectionId='10' Name="CategoryTextBlock" Text="GEMM MUSIC" FontSize="24" HorizontalAlignment="Left" />
+                    <GridView x:ConnectionId='11' Grid.Row="1" 
                               Name="SoundGridView"                                    
                               IsItemClickEnabled="True"
                                                           >
                         <GridView.ItemTemplate >
                             <DataTemplate                         >
-                                <Image x:ConnectionId='12' Name="MyImage" Height="112" Width="101"                            />
+                                <Image x:ConnectionId='13' Name="MyImage" Height="112" Width="101"                            />
                             </DataTemplate>
                         </GridView.ItemTemplate>
                     </GridView>
                 </Grid>
-                
+
             </SplitView.Content>
 
         </SplitView>

@@ -27,7 +27,7 @@ namespace GemmMusic
     {
         private ObservableCollection<Music> songs;
         private List<MenuItem> MenuItems;
-        private Music currentSong;
+        
         public MainPage()
         {
             this.InitializeComponent();
@@ -40,12 +40,18 @@ namespace GemmMusic
             MenuItems.Add(new MenuItem { IconFile = "Assets/Icons/drake.png", Category = MusicCategory.Drakes });
             MenuItems.Add(new MenuItem { IconFile = "Assets/Icons/selena.png", Category = MusicCategory.Selenas });
 
-            //BackButton.Visibility = Visibility.Collapsed;
+            BackButton.Visibility = Visibility.Collapsed;
         }
 
         private void MenuItemList_ItemClick(object sender, ItemClickEventArgs e)
         {
+            var menuItem = (MenuItem)e.ClickedItem;
+            CategoryTextBlock.Text = menuItem.Category.ToString();
+            MusicManager.GetSongsByCategory(songs, menuItem.Category);
+            BackButton.Visibility = Visibility.Visible;
+            
 
+         
         }
 
         private void SoundGridView_ItemClick(object sender, ItemClickEventArgs e)
@@ -57,6 +63,25 @@ namespace GemmMusic
         private void HamBurgerButton_Click(object sender, RoutedEventArgs e)
         {
             MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            MusicManager.GetAllSongs(songs);
+            CategoryTextBlock.Text = "All Songs";
+            MenuItemList.SelectedItem = null;
+            BackButton.Visibility = Visibility.Collapsed;
+        }
+
+        private void mySearchBox_QuerySubmitted(SearchBox sender, SearchBoxQuerySubmittedEventArgs args)
+        {
+
+            // MusicManager.GetSongsByCategory(songs, MusicCategory.Brunos);
+           
+            MusicManager.SearchByName(songs, args.QueryText);
+
+
+
         }
     }
 }
