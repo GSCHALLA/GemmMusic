@@ -31,6 +31,14 @@ namespace GemmMusic.Model
             var songs = new List<Music>();
             songs.Add(new Music("ShapeOfYou", MusicCategory.Brunos));
             songs.Add(new Music("Cheap Thrills", MusicCategory.Demis));
+            songs.Add(new Music("ShapeOfYou", MusicCategory.Brunos));
+            songs.Add(new Music("Cheap Thrills", MusicCategory.Demis));
+            songs.Add(new Music("ShapeOfYou", MusicCategory.Brunos));
+            songs.Add(new Music("Cheap Thrills", MusicCategory.Demis));
+            songs.Add(new Music("ShapeOfYou", MusicCategory.Brunos));
+            songs.Add(new Music("Cheap Thrills", MusicCategory.Demis));
+            songs.Add(new Music("ShapeOfYou", MusicCategory.Brunos));
+            songs.Add(new Music("Cheap Thrills", MusicCategory.Demis));
 
             return songs;
 
@@ -41,12 +49,14 @@ namespace GemmMusic.Model
         public static void SearchByName(ObservableCollection<Music> songs, string queryText)
         {
             var allsongs = getSongs();
-            var SearchedSongsByName = 
-                allsongs.Where(song => song.Name.Contains(queryText)
-                || song.Category.ToString().Contains(queryText)).ToList();
+            var SearchedSongsByNameCategory = 
+                allsongs.Where(song => song.Name.ToUpper().Contains(queryText.ToUpper())
+                || song.Category.ToString().ToUpper().Contains(queryText.ToUpper())).ToList();
             songs.Clear();
-            SearchedSongsByName.ForEach(song => songs.Add(song));
-            
+            SearchedSongsByNameCategory.ForEach(song => songs.Add(song));
+
+          /* Search button - Searching based on name and category - ends here */
+
         }
     }
 }

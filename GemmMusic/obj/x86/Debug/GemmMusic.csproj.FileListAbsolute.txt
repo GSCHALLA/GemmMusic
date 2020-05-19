@@ -43,3 +43,7 @@ C:\Users\saige\source\repos\GemmMusic\GemmMusic\obj\x86\Debug\MultipleQualifiers
 C:\Users\saige\source\repos\GemmMusic\GemmMusic\obj\x86\Debug\ProjectArchitectures.txt
 C:\Users\saige\source\repos\GemmMusic\GemmMusic\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636885562160000000.json
 C:\Users\saige\source\repos\GemmMusic\GemmMusic\obj\x86\Debug\GemmMusic.csprojAssemblyReference.cache
+C:\Users\saige\source\repos\GemmMusic\GemmMusic\bin\x86\Debug\policy.2.0.taglib-sharp.dll
+C:\Users\saige\source\repos\GemmMusic\GemmMusic\bin\x86\Debug\taglib-sharp.dll
+C:\Users\saige\source\repos\GemmMusic\GemmMusic\bin\x86\Debug\System.Drawing.Common.dll
+C:\Users\saige\source\repos\GemmMusic\GemmMusic\obj\x86\Debug\FxResources.System.Drawing.Common.SR.resw

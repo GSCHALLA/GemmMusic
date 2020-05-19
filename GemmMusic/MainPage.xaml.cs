@@ -1,20 +1,13 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
+using System;
 using GemmMusic.Model;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.Media.Core;
-using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
+using Windows.UI.Xaml;
+using System.Drawing;
+using Windows.UI.Xaml.Media.Imaging;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -27,6 +20,10 @@ namespace GemmMusic
     {
         private ObservableCollection<Music> songs;
         private List<MenuItem> MenuItems;
+
+        //private Music currentSong;
+
+        //private bool playerView;
         
         public MainPage()
         {
@@ -49,6 +46,7 @@ namespace GemmMusic
             CategoryTextBlock.Text = menuItem.Category.ToString();
             MusicManager.GetSongsByCategory(songs, menuItem.Category);
             BackButton.Visibility = Visibility.Visible;
+            SoundGridView.Visibility = Visibility.Visible;
             
 
          
@@ -58,6 +56,14 @@ namespace GemmMusic
         {
             var song = (Music)e.ClickedItem;
             MyMediaElement.Source = new Uri(BaseUri, song.AudioFile);
+            SelectedImage.ImageSource = new BitmapImage(new Uri(BaseUri, song.ImageFile));
+            SoundGridView.Visibility = Visibility.Collapsed;
+
+            var file = TagLib.File.Create(song.AudioFile);
+            String title = file.Tag.Title;
+            CategoryTextBlock.Text = title;
+
+
         }
 
         private void HamBurgerButton_Click(object sender, RoutedEventArgs e)
@@ -75,13 +81,22 @@ namespace GemmMusic
 
         private void mySearchBox_QuerySubmitted(SearchBox sender, SearchBoxQuerySubmittedEventArgs args)
         {
-
-            // MusicManager.GetSongsByCategory(songs, MusicCategory.Brunos);
            
             MusicManager.SearchByName(songs, args.QueryText);
+        }
 
-
+        private void PlayerView_ItemClick(object sender, ItemClickEventArgs e)
+        {
 
         }
     }
 }
+
+
+//
+//            //TagLib.IPicture pic = file.Tag.Pictures[0];
+//            //MemoryStream stream = new MemoryStream(pic.Data.Data);
+
+//            //System.Drawing.Image image = System.Drawing.Image.FromStream(stream);
+
+//            //image.GetThumbnailImage

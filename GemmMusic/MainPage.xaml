@@ -9,6 +9,10 @@
       mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Grid >
+        <Grid.Background>
+            <ImageBrush x:Name="SelectedImage" Stretch="Uniform" Opacity="20"  />
+        </Grid.Background>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -47,32 +51,42 @@
                 </ListView>
             </SplitView.Pane>
             <SplitView.Content >
-                <Grid  Margin="10,20,0,0">
+
+                <Grid  Margin="10,20,0,0" Visibility="Visible">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <!--Search starts here-->
 
-                    <SearchBox x:Name="mySearchBox"
+
+                    <SearchBox x:Name="mySearchBox" 
                                FocusOnKeyboardInput="True"
-                               QuerySubmitted="mySearchBox_QuerySubmitted" Width="400" Height="35"/>
+                               QuerySubmitted="mySearchBox_QuerySubmitted"  Width="400" Height="35" Margin="0,0,0,0"/>
+
+                    <TextBlock Name="CategoryTextBlock" Text="ALL SONGS"   
+                               FontSize="24" HorizontalAlignment="Left"  FontWeight="Bold"/>
 
                     <!--search ends here-->
-                    
+
                     <MediaElement Name="MyMediaElement" AutoPlay="True"/>
-                    <TextBlock Name="CategoryTextBlock" Text="GEMM MUSIC" FontSize="24" HorizontalAlignment="Left" />
+
+                    
+
                     <GridView Grid.Row="1" 
                               Name="SoundGridView" ItemClick="SoundGridView_ItemClick"
                               IsItemClickEnabled="True"
-                              ItemsSource="{x:Bind songs}">
+                              ItemsSource="{x:Bind songs}" Margin="0,0,0,0">
+
                         <GridView.ItemTemplate >
                             <DataTemplate x:DataType="model:Music">
                                 <Image Name="MyImage" Height="112" Width="101" Source="{x:Bind ImageFile}"/>
                             </DataTemplate>
                         </GridView.ItemTemplate>
+
                     </GridView>
                 </Grid>
+
 
             </SplitView.Content>
 
@@ -81,3 +95,13 @@
     </Grid>
 
 </Page>
+    
+<!--<Image Name="PlayerImage" Width="500" Height="500"
+                           Source="/Assets/Icons/bruno.png" Margin="0,100,0,0" Visibility="Collapsed">
+                    </Image>
+
+                    <Image Width="300">
+                        <Image.Source>
+                            <BitmapImage DecodePixelWidth="200"  UriSource="ShapeOfYou.png" />
+                        </Image.Source>
+                    </Image>-->
