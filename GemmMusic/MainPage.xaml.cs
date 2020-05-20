@@ -8,6 +8,8 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml;
 using System.Drawing;
 using Windows.UI.Xaml.Media.Imaging;
+using System.Linq;
+using Windows.Media.Core;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -47,23 +49,28 @@ namespace GemmMusic
             MusicManager.GetSongsByCategory(songs, menuItem.Category);
             BackButton.Visibility = Visibility.Visible;
             SoundGridView.Visibility = Visibility.Visible;
-            
+            mySearchBox.Visibility = Visibility.Visible;
 
-         
+            MusicTitle.Visibility = Visibility.Visible;
+
+
+
         }
 
         private void SoundGridView_ItemClick(object sender, ItemClickEventArgs e)
         {
             var song = (Music)e.ClickedItem;
-            MyMediaElement.Source = new Uri(BaseUri, song.AudioFile);
+            MyMediaElement.Source = MediaSource.CreateFromUri(new Uri(BaseUri, song.AudioFile));
             SelectedImage.ImageSource = new BitmapImage(new Uri(BaseUri, song.ImageFile));
+           
             SoundGridView.Visibility = Visibility.Collapsed;
+            mySearchBox.Visibility = Visibility.Collapsed;
+            CategoryTextBlock.Visibility = Visibility.Collapsed;
+            MyMediaElement.Visibility = Visibility.Visible;
 
+            MusicTitle.Visibility = Visibility.Visible;
             var file = TagLib.File.Create(song.AudioFile);
-            String title = file.Tag.Title;
-            CategoryTextBlock.Text = title;
-
-
+            MusicTitle.Text = file.Tag.Title;
         }
 
         private void HamBurgerButton_Click(object sender, RoutedEventArgs e)

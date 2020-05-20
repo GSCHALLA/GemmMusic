@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\saige\source\repos\GemmMusic\GemmMusic\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-05-19T01:32:13.184</Modified>
+      <Modified>2020-05-20T00:44:54.515</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\saige\source\repos\GemmMusic\GemmMusic\bin\x86\Debug\GemmMusic.exe">
       <PackagePath>entrypoint\GemmMusic.exe</PackagePath>
-      <Modified>2020-05-19T01:32:12.616</Modified>
+      <Modified>2020-05-20T00:44:54.033</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.9\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
@@ -138,15 +138,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\saige\source\repos\GemmMusic\GemmMusic\bin\x86\Debug\GemmMusic.xr.xml">
       <PackagePath>GemmMusic.xr.xml</PackagePath>
-      <Modified>2020-05-19T01:02:57.126</Modified>
+      <Modified>2020-05-20T00:41:24.309</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\saige\source\repos\GemmMusic\GemmMusic\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-05-19T01:32:12.398</Modified>
+      <Modified>2020-05-20T00:44:53.885</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\saige\source\repos\GemmMusic\GemmMusic\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-05-19T01:32:12.398</Modified>
+      <Modified>2020-05-20T00:44:53.885</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -158,7 +158,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\saige\source\repos\GemmMusic\GemmMusic\bin\x86\Debug\Core\GemmMusic.exe">
       <PackagePath>GemmMusic.exe</PackagePath>
-      <Modified>2020-05-19T01:32:13.171</Modified>
+      <Modified>2020-05-20T00:44:54.509</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

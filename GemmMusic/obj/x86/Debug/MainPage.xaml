@@ -20,12 +20,12 @@
 
         <RelativePanel>
 
-            <Button x:ConnectionId='15' Name="HamBurgerButton"
+            <Button x:ConnectionId='16' Name="HamBurgerButton"
                     RelativePanel.AlignLeftWithPanel="True" Margin="0,10,0,0"
                     FontFamily="Segoe MDL2 Assets" 
                     Content="&#xE700;" Width="35"                              />
 
-            <Button x:ConnectionId='16' Name="BackButton"
+            <Button x:ConnectionId='17' Name="BackButton"
                     RelativePanel.RightOf="HamBurgerButton" Margin="0,10,0,0"                          
                     FontFamily="Segoe MDL2 Assets"
                     Content="&#xE0A6;" Width="35"/>
@@ -52,35 +52,40 @@
             </SplitView.Pane>
             <SplitView.Content >
 
-                <Grid  Margin="10,20,0,0" Visibility="Visible">
+                <Grid >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <!--Search starts here-->
 
 
-                    <SearchBox x:ConnectionId='9' x:Name="mySearchBox" 
+                    <SearchBox x:ConnectionId='9'  Grid.Row="0" x:Name="mySearchBox" 
                                FocusOnKeyboardInput="True"
-                                                                            Width="400" Height="35" Margin="0,0,0,0"/>
-
-                    <TextBlock x:ConnectionId='10' Name="CategoryTextBlock" Text="ALL SONGS"   
-                               FontSize="24" HorizontalAlignment="Left"  FontWeight="Bold"/>
+                                                                            Width="400" Height="35" Margin="0,0,0,0" Canvas.ZIndex="100"/>
 
                     <!--search ends here-->
-
-                    <MediaElement x:ConnectionId='11' Name="MyMediaElement" AutoPlay="True"/>
-
                     
+                    <TextBlock x:ConnectionId='10' Grid.Row="1" Name="CategoryTextBlock" Text="ALL SONGS"   
+                               FontSize="24" HorizontalAlignment="Left"  FontWeight="Bold"/>
 
-                    <GridView x:ConnectionId='12' Grid.Row="1" 
+                    <TextBlock x:ConnectionId='11'  Name="MusicTitle" Text=" " Visibility="Collapsed" FontSize="24" Margin="10,20,40,60"
+                               HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3"/>
+
+                    <MediaPlayerElement x:ConnectionId='12' Name="MyMediaElement"  Visibility="Collapsed" VerticalAlignment="Center"
+                                       Grid.Row="4" AreTransportControlsEnabled="True" AutoPlay="True"/>
+
+                    <GridView x:ConnectionId='13' Grid.Row="2" 
                               Name="SoundGridView"                                    
                               IsItemClickEnabled="True"
                                                            Margin="0,0,0,0">
 
                         <GridView.ItemTemplate >
                             <DataTemplate                         >
-                                <Image x:ConnectionId='14' Name="MyImage" Height="112" Width="101"                            />
+                                <Image x:ConnectionId='15' Name="MyImage" Height="112" Width="101"                            />
                             </DataTemplate>
                         </GridView.ItemTemplate>
 
@@ -95,14 +100,4 @@
     </Grid>
 
 </Page>
-    
-<!--<Image Name="PlayerImage" Width="500" Height="500"
-                           Source="/Assets/Icons/bruno.png" Margin="0,100,0,0" Visibility="Collapsed">
-                    </Image>
-
-                    <Image Width="300">
-                        <Image.Source>
-                            <BitmapImage DecodePixelWidth="200"  UriSource="ShapeOfYou.png" />
-                        </Image.Source>
-                    </Image>-->
 

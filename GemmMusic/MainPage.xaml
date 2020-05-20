@@ -52,28 +52,33 @@
             </SplitView.Pane>
             <SplitView.Content >
 
-                <Grid  Margin="10,20,0,0" Visibility="Visible">
+                <Grid >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <!--Search starts here-->
 
 
-                    <SearchBox x:Name="mySearchBox" 
+                    <SearchBox  Grid.Row="0" x:Name="mySearchBox" 
                                FocusOnKeyboardInput="True"
-                               QuerySubmitted="mySearchBox_QuerySubmitted"  Width="400" Height="35" Margin="0,0,0,0"/>
-
-                    <TextBlock Name="CategoryTextBlock" Text="ALL SONGS"   
-                               FontSize="24" HorizontalAlignment="Left"  FontWeight="Bold"/>
+                               QuerySubmitted="mySearchBox_QuerySubmitted"  Width="400" Height="35" Margin="0,0,0,0" Canvas.ZIndex="100"/>
 
                     <!--search ends here-->
-
-                    <MediaElement Name="MyMediaElement" AutoPlay="True"/>
-
                     
+                    <TextBlock Grid.Row="1" Name="CategoryTextBlock" Text="ALL SONGS"   
+                               FontSize="24" HorizontalAlignment="Left"  FontWeight="Bold"/>
 
-                    <GridView Grid.Row="1" 
+                    <TextBlock  Name="MusicTitle" Text=" " Visibility="Collapsed" FontSize="24" Margin="10,20,40,60"
+                               HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3"/>
+
+                    <MediaPlayerElement Name="MyMediaElement"  Visibility="Collapsed" VerticalAlignment="Center"
+                                       Grid.Row="4" AreTransportControlsEnabled="True" AutoPlay="True"/>
+
+                    <GridView Grid.Row="2" 
                               Name="SoundGridView" ItemClick="SoundGridView_ItemClick"
                               IsItemClickEnabled="True"
                               ItemsSource="{x:Bind songs}" Margin="0,0,0,0">
@@ -95,13 +100,3 @@
     </Grid>
 
 </Page>
-    
-<!--<Image Name="PlayerImage" Width="500" Height="500"
-                           Source="/Assets/Icons/bruno.png" Margin="0,100,0,0" Visibility="Collapsed">
-                    </Image>
-
-                    <Image Width="300">
-                        <Image.Source>
-                            <BitmapImage DecodePixelWidth="200"  UriSource="ShapeOfYou.png" />
-                        </Image.Source>
-                    </Image>-->
