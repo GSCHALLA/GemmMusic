@@ -13,6 +13,7 @@ namespace GemmMusic.Model
         Demis,
         Drakes,
         Selenas,
+        MyPlaylist
     }
     public class Music
     {
@@ -20,16 +21,24 @@ namespace GemmMusic.Model
         public MusicCategory Category { get; set; }
         public string ImageFile { get; set; }
         public string AudioFile { get; set; }
+        public string Album { get; set; }
 
         public Music (string name, MusicCategory category)
         {
             Name = name;
             Category = category;
             AudioFile = $"Assets/Audio/{category}/{name}.mp3";
-            ImageFile = $"Assets/Images/{category}/{name}.png";
+            ImageFile = $"Assets/Images/Demis/Cheap Thrills.png";
+            Album = "";
+        }
 
-
-
+        public Music(string name, MusicCategory category, string audioFile , string album)
+        {
+            Name = name;
+            Category = category;
+            AudioFile = audioFile;
+            ImageFile = $"Assets/Images/Demis/Cheap Thrills.png";
+            Album = album;
         }
     }
 }

@@ -10,6 +10,7 @@ using System.Drawing;
 using Windows.UI.Xaml.Media.Imaging;
 using System.Linq;
 using Windows.Media.Core;
+using Windows.UI.Xaml.Documents;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -23,9 +24,6 @@ namespace GemmMusic
         private ObservableCollection<Music> songs;
         private List<MenuItem> MenuItems;
 
-        //private Music currentSong;
-
-        //private bool playerView;
         
         public MainPage()
         {
@@ -38,6 +36,8 @@ namespace GemmMusic
             MenuItems.Add(new MenuItem { IconFile = "Assets/Icons/demi.png", Category = MusicCategory.Demis });
             MenuItems.Add(new MenuItem { IconFile = "Assets/Icons/drake.png", Category = MusicCategory.Drakes });
             MenuItems.Add(new MenuItem { IconFile = "Assets/Icons/selena.png", Category = MusicCategory.Selenas });
+            MenuItems.Add(new MenuItem { IconFile = "Assets/Icons/myPlaylist.png", Category = MusicCategory.MyPlaylist });
+
 
             BackButton.Visibility = Visibility.Collapsed;
         }
@@ -51,7 +51,7 @@ namespace GemmMusic
             SoundGridView.Visibility = Visibility.Visible;
             mySearchBox.Visibility = Visibility.Visible;
 
-            MusicTitle.Visibility = Visibility.Visible;
+            MusicDetails.Visibility = Visibility.Collapsed;
 
 
 
@@ -67,10 +67,23 @@ namespace GemmMusic
             mySearchBox.Visibility = Visibility.Collapsed;
             CategoryTextBlock.Visibility = Visibility.Collapsed;
             MyMediaElement.Visibility = Visibility.Visible;
+            MusicDetails.Visibility = Visibility.Visible;
 
-            MusicTitle.Visibility = Visibility.Visible;
-            var file = TagLib.File.Create(song.AudioFile);
-            MusicTitle.Text = file.Tag.Title;
+            try
+            {
+                
+                var file = TagLib.File.Create(song.AudioFile);
+                MusicTitle.Text = file.Tag.Title;
+                AlbumName.Text = file.Tag.Album;
+            }
+            catch
+            {
+                Console.WriteLine("exception handled");
+                MusicTitle.Text = song.Name;
+                AlbumName.Text = song.Album;
+            }
+                
+           
         }
 
         private void HamBurgerButton_Click(object sender, RoutedEventArgs e)
@@ -99,11 +112,3 @@ namespace GemmMusic
     }
 }
 
-
-//
-//            //TagLib.IPicture pic = file.Tag.Pictures[0];
-//            //MemoryStream stream = new MemoryStream(pic.Data.Data);
-
-//            //System.Drawing.Image image = System.Drawing.Image.FromStream(stream);
-
-//            //image.GetThumbnailImage
