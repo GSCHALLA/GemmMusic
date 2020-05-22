@@ -52,6 +52,7 @@ namespace GemmMusic
             mySearchBox.Visibility = Visibility.Visible;
 
             MusicDetails.Visibility = Visibility.Collapsed;
+            MyMediaElement.Visibility = Visibility.Collapsed;
 
 
 
