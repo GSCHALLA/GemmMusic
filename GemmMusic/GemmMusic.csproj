@@ -135,20 +135,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Audio\Brunos\Magic.mp3" />
-    <Content Include="Assets\Audio\Brunos\ShapeOfYou.mp3" />
     <Content Include="Assets\Audio\Brunos\Uptown.mp3" />
-    <Content Include="Assets\Audio\Demis\Cheap Thrills.mp3" />
     <Content Include="Assets\Audio\Demis\Confident.mp3" />
     <Content Include="Assets\Audio\Demis\Sorry.mp3" />
     <Content Include="Assets\Audio\Drakes\Hotline.mp3" />
     <Content Include="Assets\Audio\Drakes\Scorpion.mp3" />
-    <Content Include="Assets\Audio\MyPlaylist\Aankh_Marey.mp3" />
-    <Content Include="Assets\Audio\MyPlaylist\Bum_Chiki.mp3" />
-    <Content Include="Assets\Audio\MyPlaylist\Coca_Cola_%28From__Luka_Chuppi_%29.mp3" />
-    <Content Include="Assets\Audio\MyPlaylist\Neeli_Neeli_Aakasam_%28From__30_Rojullo_Preminchadam_Ela_%29.mp3" />
-    <Content Include="Assets\Audio\MyPlaylist\Nuvve_Nuvve_%28From__Red_%29.mp3" />
-    <Content Include="Assets\Audio\MyPlaylist\Oo__Baava_.mp3" />
-    <Content Include="Assets\Audio\MyPlaylist\Sye_Raa.mp3" />
     <Content Include="Assets\Audio\Selenas\LoseU.mp3" />
     <Content Include="Assets\Audio\Selenas\StarsDance.mp3" />
     <Content Include="Assets\Icons\bruno.png" />
@@ -157,9 +148,7 @@
     <Content Include="Assets\Icons\myPlaylist.png" />
     <Content Include="Assets\Icons\selena.png" />
     <Content Include="Assets\Images\Brunos\Magic.png" />
-    <Content Include="Assets\Images\Brunos\ShapeOfYou.png" />
     <Content Include="Assets\Images\Brunos\Uptown.png" />
-    <Content Include="Assets\Images\Demis\Cheap Thrills.png" />
     <Content Include="Assets\Images\Demis\Confident.png" />
     <Content Include="Assets\Images\Demis\Sorry.png" />
     <Content Include="Assets\Images\Drakes\Hotline.png" />

@@ -28,7 +28,7 @@ namespace GemmMusic.Model
             Name = name;
             Category = category;
             AudioFile = $"Assets/Audio/{category}/{name}.mp3";
-            ImageFile = $"Assets/Images/Demis/Cheap Thrills.png";
+            ImageFile = $"Assets/Images/{category}/{name}.png";
             Album = "";
         }
 
@@ -37,8 +37,8 @@ namespace GemmMusic.Model
             Name = name;
             Category = category;
             AudioFile = audioFile;
-            ImageFile = $"Assets/Images/Demis/Cheap Thrills.png";
-            Album = album;
+            ImageFile = $"Assets/Images/MyPlaylist.png";
+            Album = "";
         }
     }
 }

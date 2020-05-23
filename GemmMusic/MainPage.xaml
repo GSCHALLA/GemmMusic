@@ -73,9 +73,13 @@
                                FontSize="24" HorizontalAlignment="Left"  FontWeight="Bold"/>
 
                     <StackPanel Name="MusicDetails" Grid.Row="3" HorizontalAlignment="Center" Visibility="Collapsed">
-                    <TextBlock  Name="MusicTitle" Text=" "  FontSize="24"  HorizontalAlignment="Center"   
-                                VerticalAlignment="Center" />
-                    <TextBlock Name="AlbumName" Text=" " FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" />
+
+                        <Grid>
+                            <Border Opacity="0.5" Background="#FF140D0D" ></Border>
+                            <TextBlock  Name="MusicTitle" Text=" " Foreground="White" FontWeight="Bold" FontSize="24"  HorizontalAlignment="Center"  />
+                        </Grid>
+
+                        <TextBlock Name="AlbumName" Text=" " FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" />
                     </StackPanel>
 
                     <MediaPlayerElement Name="MyMediaElement"  Visibility="Collapsed" VerticalAlignment="Center"
@@ -90,8 +94,9 @@
                             <DataTemplate x:DataType="model:Music">
                                 <StackPanel Padding="50,0,0,0">
                                     <Image Name="MyImage" Height="112" Width="101" Source="{x:Bind ImageFile}"/>
-                                    <TextBlock Name="MusicName" Text="{x:Bind Name}" FontSize="15" FontWeight="Bold" />
-                                   
+                                    <TextBlock Name="MusicName" Text="{x:Bind Name}" FontSize="15" FontWeight="Bold"/>
+                                    
+
                                 </StackPanel>
                             </DataTemplate>
                         </GridView.ItemTemplate>

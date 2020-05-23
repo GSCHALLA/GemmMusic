@@ -11,7 +11,7 @@ namespace GemmMusic.Model
 {
     public static class MusicManager
     {
-        private static string MY_SONGS_PATH = "Assets/Audio/MyPlaylist";
+        private static string MY_SONGS_PATH = "C:/Users/saige/source/repos/GemmMusic/GemmMusic/bin/x86/Debug/AppX/MyPlaylist";
         public static void GetAllSongs(ObservableCollection<Music> songs)
         {
             var allSongs = getSongs();
@@ -32,21 +32,25 @@ namespace GemmMusic.Model
         private static List<Music> getSongs()
         {
             var songs = new List<Music>();
-            songs.Add(new Music("ShapeOfYou", MusicCategory.Brunos));
+            //songs.Add(new Music("ShapeOfYou", MusicCategory.Brunos));
             songs.Add(new Music("Magic", MusicCategory.Brunos));
             songs.Add(new Music("Uptown", MusicCategory.Brunos));
-            songs.Add(new Music("Cheap Thrills", MusicCategory.Demis));
+            //songs.Add(new Music("Cheap Thrills", MusicCategory.Demis));
             songs.Add(new Music("Confident", MusicCategory.Demis));
             songs.Add(new Music("Sorry", MusicCategory.Demis));
             songs.Add(new Music("Hotline", MusicCategory.Drakes));
             songs.Add(new Music("Scorpion", MusicCategory.Drakes));
-            songs.Add(new Music("LoseU", MusicCategory.Selenas));
+             songs.Add (new Music("LoseU", MusicCategory.Selenas));
+            
             songs.Add(new Music("StarsDance", MusicCategory.Selenas));
+
+            
 
             var mySongs = getMySongs();
             songs.AddRange(mySongs);
 
             return songs;
+           
 
         }
 
@@ -57,7 +61,13 @@ namespace GemmMusic.Model
             foreach (string audioFilePath in fileEntries)
             {
                 var file = TagLib.File.Create(audioFilePath);
-                mySongs.Add(new Music(file.Tag.Title, MusicCategory.MyPlaylist, audioFilePath , file.Tag.Album));
+             Music music =  new Music(file.Tag.Title, MusicCategory.MyPlaylist, audioFilePath, file.Tag.Album);
+
+                if (music.Name == null)
+                {
+                    music.Name = " ";
+                }
+                mySongs.Add(music);
             }
             return mySongs;
         }

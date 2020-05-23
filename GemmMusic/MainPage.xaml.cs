@@ -53,6 +53,7 @@ namespace GemmMusic
 
             MusicDetails.Visibility = Visibility.Collapsed;
             MyMediaElement.Visibility = Visibility.Collapsed;
+           
 
 
 
@@ -69,6 +70,7 @@ namespace GemmMusic
             CategoryTextBlock.Visibility = Visibility.Collapsed;
             MyMediaElement.Visibility = Visibility.Visible;
             MusicDetails.Visibility = Visibility.Visible;
+            BackButton.Visibility = Visibility.Visible;
 
             try
             {
@@ -76,9 +78,12 @@ namespace GemmMusic
                 var file = TagLib.File.Create(song.AudioFile);
                 MusicTitle.Text = file.Tag.Title;
                 AlbumName.Text = file.Tag.Album;
+                
+
             }
             catch
             {
+                
                 Console.WriteLine("exception handled");
                 MusicTitle.Text = song.Name;
                 AlbumName.Text = song.Album;
@@ -98,12 +103,16 @@ namespace GemmMusic
             CategoryTextBlock.Text = "All Songs";
             MenuItemList.SelectedItem = null;
             BackButton.Visibility = Visibility.Collapsed;
+            SoundGridView.Visibility = Visibility.Visible;
+            mySearchBox.Visibility = Visibility.Visible;
+            
         }
 
         private void mySearchBox_QuerySubmitted(SearchBox sender, SearchBoxQuerySubmittedEventArgs args)
         {
            
             MusicManager.SearchByName(songs, args.QueryText);
+            //mySearchBox.Visibility = Visibility.Visible;
         }
 
         private void PlayerView_ItemClick(object sender, ItemClickEventArgs e)
