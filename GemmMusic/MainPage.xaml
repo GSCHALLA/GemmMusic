@@ -30,6 +30,7 @@
                     FontFamily="Segoe MDL2 Assets"
                     Content="&#xE0A6;" Width="35"/>
 
+
         </RelativePanel>
 
         <SplitView Name="MySplitView"
@@ -66,10 +67,10 @@
                     <SearchBox  Grid.Row="0" x:Name="mySearchBox" 
                                FocusOnKeyboardInput="True"
                                QuerySubmitted="mySearchBox_QuerySubmitted"  Width="400" Height="35" Margin="0,0,0,0" Canvas.ZIndex="100"/>
-
+                    <TextBlock Grid.Row="0" Text="GEMM MUSIC" FontWeight="Bold" FontSize="25" HorizontalAlignment="Left" Margin="336,0,0,0" Foreground="Black" Width="173"/>
                     <!--search ends here-->
 
-                    <TextBlock Grid.Row="1" Name="CategoryTextBlock" Text="ALL SONGS"   
+                    <TextBlock Grid.Row="1" Name="CategoryTextBlock" Text="ALL SONGS"  Foreground="Black" 
                                FontSize="24" HorizontalAlignment="Left"  FontWeight="Bold"/>
 
                     <StackPanel Name="MusicDetails" Grid.Row="3" HorizontalAlignment="Center" Visibility="Collapsed">
@@ -95,7 +96,7 @@
                                 <StackPanel Padding="50,0,0,0">
                                     <Image Name="MyImage" Height="112" Width="101" Source="{x:Bind ImageFile}"/>
                                     <TextBlock Name="MusicName" Text="{x:Bind Name}" FontSize="15" FontWeight="Bold"/>
-                                    
+
 
                                 </StackPanel>
                             </DataTemplate>

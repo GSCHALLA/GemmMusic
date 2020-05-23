@@ -38,7 +38,7 @@ namespace GemmMusic.Model
             Category = category;
             AudioFile = audioFile;
             ImageFile = $"Assets/Images/MyPlaylist.png";
-            Album = "";
+            Album = album;
         }
     }
 }
