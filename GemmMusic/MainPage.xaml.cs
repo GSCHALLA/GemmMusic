@@ -40,6 +40,8 @@ namespace GemmMusic
 
 
             BackButton.Visibility = Visibility.Collapsed;
+            ArtistTextBlock.Visibility = Visibility.Collapsed;
+            AlbumTextBlock.Visibility = Visibility.Collapsed;
         }
 
         private void MenuItemList_ItemClick(object sender, ItemClickEventArgs e)
@@ -50,9 +52,12 @@ namespace GemmMusic
             BackButton.Visibility = Visibility.Visible;
             SoundGridView.Visibility = Visibility.Visible;
             mySearchBox.Visibility = Visibility.Visible;
+            ArtistTextBlock.Visibility = Visibility.Collapsed;
+            AlbumTextBlock.Visibility = Visibility.Collapsed;
 
             MusicDetails.Visibility = Visibility.Collapsed;
             MyMediaElement.Visibility = Visibility.Collapsed;
+
            
 
 
@@ -64,20 +69,24 @@ namespace GemmMusic
             var song = (Music)e.ClickedItem;
             MyMediaElement.Source = MediaSource.CreateFromUri(new Uri(BaseUri, song.AudioFile));
             SelectedImage.ImageSource = new BitmapImage(new Uri(BaseUri, song.ImageFile));
-           
             SoundGridView.Visibility = Visibility.Collapsed;
             mySearchBox.Visibility = Visibility.Collapsed;
             CategoryTextBlock.Visibility = Visibility.Collapsed;
             MyMediaElement.Visibility = Visibility.Visible;
             MusicDetails.Visibility = Visibility.Visible;
             BackButton.Visibility = Visibility.Visible;
+            ArtistTextBlock.Text = song.Artist;
+            AlbumTextBlock.Text = song.Album;
+            ArtistTextBlock.Visibility = Visibility.Visible;
+            AlbumTextBlock.Visibility = Visibility.Visible;
+
 
             try
             {
                 
                 var file = TagLib.File.Create(song.AudioFile);
                 MusicTitle.Text = file.Tag.Title;
-                AlbumName.Text = file.Tag.Album;
+               // AlbumName.Text = file.Tag.Album;
                 
 
             }
@@ -86,10 +95,13 @@ namespace GemmMusic
                 
                 Console.WriteLine("exception handled");
                 MusicTitle.Text = song.Name;
-                AlbumName.Text = song.Album;
+               // AlbumName.Text = song.Album;
             }
-                
-           
+
+
+
+
+
         }
 
         private void HamBurgerButton_Click(object sender, RoutedEventArgs e)
@@ -105,7 +117,9 @@ namespace GemmMusic
             BackButton.Visibility = Visibility.Collapsed;
             SoundGridView.Visibility = Visibility.Visible;
             mySearchBox.Visibility = Visibility.Visible;
-            
+            ArtistTextBlock.Visibility = Visibility.Collapsed;
+            AlbumTextBlock.Visibility = Visibility.Collapsed;
+
         }
 
         private void mySearchBox_QuerySubmitted(SearchBox sender, SearchBoxQuerySubmittedEventArgs args)

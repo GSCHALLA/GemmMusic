@@ -67,7 +67,7 @@
                     <SearchBox  Grid.Row="0" x:Name="mySearchBox" 
                                FocusOnKeyboardInput="True"
                                QuerySubmitted="mySearchBox_QuerySubmitted"  Width="400" Height="35" Margin="0,0,0,0" Canvas.ZIndex="100"/>
-                    <TextBlock Grid.Row="0" Text="GEMM MUSIC" FontWeight="Bold" FontSize="25" HorizontalAlignment="Left" Margin="336,0,0,0" Foreground="Black" Width="173"/>
+                    <!--<TextBlock Grid.Row="0" Text="GEMM MUSIC" FontWeight="Bold" FontSize="25" HorizontalAlignment="Left" Margin="336,0,0,0" Foreground="Black" Width="173"/>-->
                     <!--search ends here-->
 
                     <TextBlock Grid.Row="1" Name="CategoryTextBlock" Text="ALL SONGS"  Foreground="Black" 
@@ -80,11 +80,21 @@
                             <TextBlock  Name="MusicTitle" Text=" " Foreground="White" FontWeight="Bold" FontSize="24"  HorizontalAlignment="Center"  />
                         </Grid>
 
-                        <TextBlock Name="AlbumName" Text=" " FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" />
+                        <!--<TextBlock Name="AlbumName" Text=" " FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" />-->
                     </StackPanel>
 
                     <MediaPlayerElement Name="MyMediaElement"  Visibility="Collapsed" VerticalAlignment="Center"
                                        Grid.Row="4" AreTransportControlsEnabled="True" AutoPlay="True"/>
+
+                    <StackPanel >
+                        <TextBox x:Name="ArtistTextBlock"
+                     Header="Artist Name:" PlaceholderText="Artist Name"
+                     Width="300" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+                        <TextBox x:Name="AlbumTextBlock"
+                     Header="Album name:" PlaceholderText="Album Name"
+                     Width="300" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+                    </StackPanel>
+
 
                     <GridView Grid.Row="2" 
                               Name="SoundGridView" ItemClick="SoundGridView_ItemClick"
